@@ -18,6 +18,12 @@
 		F8643F442C11E3ED000D15A5 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F432C11E3ED000D15A5 /* NetworkManagerTests.swift */; };
 		F8643F472C11EA4E000D15A5 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F462C11EA4E000D15A5 /* Book.swift */; };
 		F8643F492C11EAB4000D15A5 /* BookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F482C11EAB4000D15A5 /* BookList.swift */; };
+		F8643F4B2C11ED66000D15A5 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F4A2C11ED66000D15A5 /* URLSessionProtocol.swift */; };
+		F8643F4E2C11EF38000D15A5 /* SearchBookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F4D2C11EF38000D15A5 /* SearchBookRepository.swift */; };
+		F8643F512C11EF83000D15A5 /* BookNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F502C11EF83000D15A5 /* BookNetwork.swift */; };
+		F8643F532C11F592000D15A5 /* BookNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F522C11F592000D15A5 /* BookNetworkTests.swift */; };
+		F8643F572C11F8F9000D15A5 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F562C11F8F9000D15A5 /* MockURLSession.swift */; };
+		F8643F592C11F9ED000D15A5 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F582C11F9ED000D15A5 /* MockNetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +51,12 @@
 		F8643F432C11E3ED000D15A5 /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
 		F8643F462C11EA4E000D15A5 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		F8643F482C11EAB4000D15A5 /* BookList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookList.swift; sourceTree = "<group>"; };
+		F8643F4A2C11ED66000D15A5 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		F8643F4D2C11EF38000D15A5 /* SearchBookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookRepository.swift; sourceTree = "<group>"; };
+		F8643F502C11EF83000D15A5 /* BookNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookNetwork.swift; sourceTree = "<group>"; };
+		F8643F522C11F592000D15A5 /* BookNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookNetworkTests.swift; sourceTree = "<group>"; };
+		F8643F562C11F8F9000D15A5 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		F8643F582C11F9ED000D15A5 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +101,7 @@
 				F8643F1B2C11DE84000D15A5 /* AppDelegate.swift */,
 				F8643F1D2C11DE84000D15A5 /* SceneDelegate.swift */,
 				F8643F1F2C11DE84000D15A5 /* ViewController.swift */,
+				F8643F4C2C11EF21000D15A5 /* Repository */,
 				F8643F452C11EA40000D15A5 /* Entity */,
 				F8643F2F2C11DF67000D15A5 /* Network */,
 				F8643F212C11DE84000D15A5 /* Main.storyboard */,
@@ -102,8 +115,8 @@
 		F8643F2F2C11DF67000D15A5 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				F8643F302C11DFE3000D15A5 /* NetworkManager.swift */,
-				F8643F322C11E343000D15A5 /* NetworkError.swift */,
+				F8643F4F2C11EF6F000D15A5 /* Base */,
+				F8643F502C11EF83000D15A5 /* BookNetwork.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -112,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				F8643F432C11E3ED000D15A5 /* NetworkManagerTests.swift */,
+				F8643F542C11F8E7000D15A5 /* Mock */,
+				F8643F522C11F592000D15A5 /* BookNetworkTests.swift */,
 			);
 			path = MyBooksTests;
 			sourceTree = "<group>";
@@ -123,6 +138,33 @@
 				F8643F482C11EAB4000D15A5 /* BookList.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		F8643F4C2C11EF21000D15A5 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				F8643F4D2C11EF38000D15A5 /* SearchBookRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		F8643F4F2C11EF6F000D15A5 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F8643F302C11DFE3000D15A5 /* NetworkManager.swift */,
+				F8643F4A2C11ED66000D15A5 /* URLSessionProtocol.swift */,
+				F8643F322C11E343000D15A5 /* NetworkError.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		F8643F542C11F8E7000D15A5 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				F8643F562C11F8F9000D15A5 /* MockURLSession.swift */,
+				F8643F582C11F9ED000D15A5 /* MockNetworkManager.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,9 +269,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8643F312C11DFE3000D15A5 /* NetworkManager.swift in Sources */,
+				F8643F512C11EF83000D15A5 /* BookNetwork.swift in Sources */,
+				F8643F4E2C11EF38000D15A5 /* SearchBookRepository.swift in Sources */,
 				F8643F202C11DE84000D15A5 /* ViewController.swift in Sources */,
 				F8643F472C11EA4E000D15A5 /* Book.swift in Sources */,
 				F8643F1C2C11DE84000D15A5 /* AppDelegate.swift in Sources */,
+				F8643F4B2C11ED66000D15A5 /* URLSessionProtocol.swift in Sources */,
 				F8643F492C11EAB4000D15A5 /* BookList.swift in Sources */,
 				F8643F1E2C11DE84000D15A5 /* SceneDelegate.swift in Sources */,
 				F8643F332C11E343000D15A5 /* NetworkError.swift in Sources */,
@@ -240,7 +285,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8643F572C11F8F9000D15A5 /* MockURLSession.swift in Sources */,
 				F8643F442C11E3ED000D15A5 /* NetworkManagerTests.swift in Sources */,
+				F8643F592C11F9ED000D15A5 /* MockNetworkManager.swift in Sources */,
+				F8643F532C11F592000D15A5 /* BookNetworkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

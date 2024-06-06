@@ -7,22 +7,31 @@
 
 import Foundation
 
-final class NetworkManager {
+enum HTTPMethod: String {
+    case get = "GET"
+    case post = "POST"
+}
+
+protocol NetworkManagerProtocol {
+    func fetchData<T: Decodable>(urlString: String, httpMethod: HTTPMethod, headers: [String: String]?) async -> Result<T,NetworkError>
+}
+
+public class NetworkManager {
     private let session: URLSessionProtocol
     init(session: URLSessionProtocol) {
         self.session = session
         
     }
     
-    func fetchData<T: Decodable>(urlString: String, httpMethod: String = "GET", headers: [String: String] = [:]) async -> Result<T,NetworkError> {
+    func fetchData<T: Decodable>(urlString: String, httpMethod: HTTPMethod, headers: [String: String]?) async -> Result<T,NetworkError> {
         
         guard let url = URL(string: urlString) else {
             return .failure(NetworkError.urlError(urlString))
         }
         do {
             var request = URLRequest(url: url)
-            request.httpMethod = httpMethod
-            headers.forEach { request.addValue($1, forHTTPHeaderField: $0) }
+            request.httpMethod = httpMethod.rawValue
+            headers?.forEach { request.addValue($1, forHTTPHeaderField: $0) }
             let (data, response) = try await session.data(for: request)
             guard let response =  response as? HTTPURLResponse else { return .failure(NetworkError.invalidResponse) }
             if 200..<400 ~= response.statusCode {

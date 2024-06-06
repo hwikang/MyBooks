@@ -25,7 +25,7 @@ final class NetworkManagerTests: XCTestCase {
         mockURLSession.mockResponse = HTTPURLResponse(url: URL(string: "https://example.com")!,
                                                       statusCode: 200, httpVersion: nil, headerFields: nil)
         
-        let result: Result<MockDecodable, NetworkError> = await networkManager.fetchData(urlString: "https://example.com")
+        let result: Result<MockDecodable, NetworkError> = await networkManager.fetchData(urlString: "https://example.com", httpMethod: .get, headers: nil)
 
         switch result {
         case .success(let data):
@@ -41,7 +41,7 @@ final class NetworkManagerTests: XCTestCase {
         mockURLSession.mockResponse = HTTPURLResponse(url: URL(string: "https://example.com")!,
                                                       statusCode: 200, httpVersion: nil, headerFields: nil)
         
-        let result: Result<MockDecodable, NetworkError> = await networkManager.fetchData(urlString: "https://example.com")
+        let result: Result<MockDecodable, NetworkError> = await networkManager.fetchData(urlString: "https://example.com", httpMethod: .get, headers: nil)
 
         switch result {
         case .failure(let error):
@@ -61,7 +61,7 @@ final class NetworkManagerTests: XCTestCase {
         mockURLSession.mockResponse = HTTPURLResponse(url: URL(string: urlString)!,
                                                       statusCode: 404, httpVersion: nil, headerFields: nil)
         
-        let result: Result<MockDecodable, NetworkError> = await networkManager.fetchData(urlString: urlString)
+        let result: Result<MockDecodable, NetworkError> = await networkManager.fetchData(urlString: urlString, httpMethod: .get, headers: nil)
         
         switch result {
         case .failure(let error):
@@ -78,20 +78,4 @@ final class NetworkManagerTests: XCTestCase {
 
 struct MockDecodable: Decodable {
     let name: String
-}
-
-class MockURLSession: URLSessionProtocol {
-    var mockData: Data?
-    var mockResponse: URLResponse?
-    var mockError: Error?
-    
-   func data(for request: URLRequest) async throws -> (Data, URLResponse) {
-       if let error = mockError {
-           throw error
-       }
-       guard let data = mockData, let response = mockResponse else {
-           throw URLError(.badServerResponse)
-       }
-       return (data, response)
-   }
 }

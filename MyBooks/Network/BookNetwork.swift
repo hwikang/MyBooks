@@ -8,18 +8,24 @@
 import Foundation
 
 protocol BookNetworkProtocol {
-    func search(query: String, page: Int) async -> Result<BookList, NetworkError>
+    func searchBooks(query: String, page: Int) async -> Result<BookList, NetworkError>
+    func bookDetail(isbn: String) async -> Result<Book, NetworkError>
+
 }
 
 final class BookNetwork: BookNetworkProtocol {
-    private let network: NetworkManager
-    private let endPoint = "https://api.itbook.store/1.0/search"
+    private let network: NetworkManagerProtocol
+    private let endPoint = "https://api.itbook.store/1.0"
     
-    init(network: NetworkManager) {
+    init(network: NetworkManagerProtocol) {
         self.network = network
     }
     
-    func search(query: String, page: Int) async -> Result<BookList, NetworkError> {
-        await network.fetchData(urlString: "\(endPoint)/\(query)/\(page)")
+    func searchBooks(query: String, page: Int) async -> Result<BookList, NetworkError> {
+        await network.fetchData(urlString: "\(endPoint)/search/\(query)/\(page)", httpMethod: .get, headers: nil)
+    }
+    
+    func bookDetail(isbn: String) async -> Result<Book, NetworkError> {
+        await network.fetchData(urlString: "\(endPoint)/\(isbn)", httpMethod: .get, headers: nil)
     }
 }
