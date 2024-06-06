@@ -13,7 +13,20 @@
 		F8643F232C11DE84000D15A5 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F8643F222C11DE84000D15A5 /* Base */; };
 		F8643F252C11DE84000D15A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8643F242C11DE84000D15A5 /* Assets.xcassets */; };
 		F8643F282C11DE84000D15A5 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F8643F272C11DE84000D15A5 /* Base */; };
+		F8643F312C11DFE3000D15A5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F302C11DFE3000D15A5 /* NetworkManager.swift */; };
+		F8643F332C11E343000D15A5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F322C11E343000D15A5 /* NetworkError.swift */; };
+		F8643F442C11E3ED000D15A5 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F432C11E3ED000D15A5 /* NetworkManagerTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F8643F3E2C11E3E2000D15A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8643F102C11DE83000D15A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8643F172C11DE84000D15A5;
+			remoteInfo = MyBooks;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F8643F182C11DE84000D15A5 /* MyBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,10 +37,21 @@
 		F8643F242C11DE84000D15A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8643F272C11DE84000D15A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8643F292C11DE84000D15A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8643F302C11DFE3000D15A5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F8643F322C11E343000D15A5 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		F8643F3A2C11E3E1000D15A5 /* MyBooksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyBooksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8643F432C11E3ED000D15A5 /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F8643F152C11DE84000D15A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8643F372C11E3E1000D15A5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				F8643F1A2C11DE84000D15A5 /* MyBooks */,
+				F8643F3B2C11E3E2000D15A5 /* MyBooksTests */,
 				F8643F192C11DE84000D15A5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				F8643F182C11DE84000D15A5 /* MyBooks.app */,
+				F8643F3A2C11E3E1000D15A5 /* MyBooksTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -59,12 +85,30 @@
 				F8643F1B2C11DE84000D15A5 /* AppDelegate.swift */,
 				F8643F1D2C11DE84000D15A5 /* SceneDelegate.swift */,
 				F8643F1F2C11DE84000D15A5 /* ViewController.swift */,
+				F8643F2F2C11DF67000D15A5 /* Network */,
 				F8643F212C11DE84000D15A5 /* Main.storyboard */,
 				F8643F242C11DE84000D15A5 /* Assets.xcassets */,
 				F8643F262C11DE84000D15A5 /* LaunchScreen.storyboard */,
 				F8643F292C11DE84000D15A5 /* Info.plist */,
 			);
 			path = MyBooks;
+			sourceTree = "<group>";
+		};
+		F8643F2F2C11DF67000D15A5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F8643F302C11DFE3000D15A5 /* NetworkManager.swift */,
+				F8643F322C11E343000D15A5 /* NetworkError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F8643F3B2C11E3E2000D15A5 /* MyBooksTests */ = {
+			isa = PBXGroup;
+			children = (
+				F8643F432C11E3ED000D15A5 /* NetworkManagerTests.swift */,
+			);
+			path = MyBooksTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +131,24 @@
 			productReference = F8643F182C11DE84000D15A5 /* MyBooks.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F8643F392C11E3E1000D15A5 /* MyBooksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8643F402C11E3E2000D15A5 /* Build configuration list for PBXNativeTarget "MyBooksTests" */;
+			buildPhases = (
+				F8643F362C11E3E1000D15A5 /* Sources */,
+				F8643F372C11E3E1000D15A5 /* Frameworks */,
+				F8643F382C11E3E1000D15A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F8643F3F2C11E3E2000D15A5 /* PBXTargetDependency */,
+			);
+			name = MyBooksTests;
+			productName = MyBooksTests;
+			productReference = F8643F3A2C11E3E1000D15A5 /* MyBooksTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -99,6 +161,10 @@
 				TargetAttributes = {
 					F8643F172C11DE84000D15A5 = {
 						CreatedOnToolsVersion = 15.3;
+					};
+					F8643F392C11E3E1000D15A5 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = F8643F172C11DE84000D15A5;
 					};
 				};
 			};
@@ -116,6 +182,7 @@
 			projectRoot = "";
 			targets = (
 				F8643F172C11DE84000D15A5 /* MyBooks */,
+				F8643F392C11E3E1000D15A5 /* MyBooksTests */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +198,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F8643F382C11E3E1000D15A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -138,13 +212,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8643F312C11DFE3000D15A5 /* NetworkManager.swift in Sources */,
 				F8643F202C11DE84000D15A5 /* ViewController.swift in Sources */,
 				F8643F1C2C11DE84000D15A5 /* AppDelegate.swift in Sources */,
 				F8643F1E2C11DE84000D15A5 /* SceneDelegate.swift in Sources */,
+				F8643F332C11E343000D15A5 /* NetworkError.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8643F362C11E3E1000D15A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8643F442C11E3ED000D15A5 /* NetworkManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F8643F3F2C11E3E2000D15A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8643F172C11DE84000D15A5 /* MyBooks */;
+			targetProxy = F8643F3E2C11E3E2000D15A5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F8643F212C11DE84000D15A5 /* Main.storyboard */ = {
@@ -341,6 +433,42 @@
 			};
 			name = Release;
 		};
+		F8643F412C11E3E2000D15A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L3B9L4FDBB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = inc.paytalab.MyBooksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyBooks.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyBooks";
+			};
+			name = Debug;
+		};
+		F8643F422C11E3E2000D15A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L3B9L4FDBB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = inc.paytalab.MyBooksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyBooks.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyBooks";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -358,6 +486,15 @@
 			buildConfigurations = (
 				F8643F2D2C11DE84000D15A5 /* Debug */,
 				F8643F2E2C11DE84000D15A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8643F402C11E3E2000D15A5 /* Build configuration list for PBXNativeTarget "MyBooksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8643F412C11E3E2000D15A5 /* Debug */,
+				F8643F422C11E3E2000D15A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
