@@ -16,6 +16,8 @@
 		F8643F312C11DFE3000D15A5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F302C11DFE3000D15A5 /* NetworkManager.swift */; };
 		F8643F332C11E343000D15A5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F322C11E343000D15A5 /* NetworkError.swift */; };
 		F8643F442C11E3ED000D15A5 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F432C11E3ED000D15A5 /* NetworkManagerTests.swift */; };
+		F8643F472C11EA4E000D15A5 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F462C11EA4E000D15A5 /* Book.swift */; };
+		F8643F492C11EAB4000D15A5 /* BookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F482C11EAB4000D15A5 /* BookList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,8 @@
 		F8643F322C11E343000D15A5 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		F8643F3A2C11E3E1000D15A5 /* MyBooksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyBooksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8643F432C11E3ED000D15A5 /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
+		F8643F462C11EA4E000D15A5 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		F8643F482C11EAB4000D15A5 /* BookList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 				F8643F1B2C11DE84000D15A5 /* AppDelegate.swift */,
 				F8643F1D2C11DE84000D15A5 /* SceneDelegate.swift */,
 				F8643F1F2C11DE84000D15A5 /* ViewController.swift */,
+				F8643F452C11EA40000D15A5 /* Entity */,
 				F8643F2F2C11DF67000D15A5 /* Network */,
 				F8643F212C11DE84000D15A5 /* Main.storyboard */,
 				F8643F242C11DE84000D15A5 /* Assets.xcassets */,
@@ -109,6 +114,15 @@
 				F8643F432C11E3ED000D15A5 /* NetworkManagerTests.swift */,
 			);
 			path = MyBooksTests;
+			sourceTree = "<group>";
+		};
+		F8643F452C11EA40000D15A5 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				F8643F462C11EA4E000D15A5 /* Book.swift */,
+				F8643F482C11EAB4000D15A5 /* BookList.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,7 +228,9 @@
 			files = (
 				F8643F312C11DFE3000D15A5 /* NetworkManager.swift in Sources */,
 				F8643F202C11DE84000D15A5 /* ViewController.swift in Sources */,
+				F8643F472C11EA4E000D15A5 /* Book.swift in Sources */,
 				F8643F1C2C11DE84000D15A5 /* AppDelegate.swift in Sources */,
+				F8643F492C11EAB4000D15A5 /* BookList.swift in Sources */,
 				F8643F1E2C11DE84000D15A5 /* SceneDelegate.swift in Sources */,
 				F8643F332C11E343000D15A5 /* NetworkError.swift in Sources */,
 			);
