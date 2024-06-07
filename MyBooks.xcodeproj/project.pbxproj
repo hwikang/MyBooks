@@ -27,6 +27,8 @@
 		F8643F622C12C85D000D15A5 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F612C12C85D000D15A5 /* SearchTableViewCell.swift */; };
 		F8643F652C12C8CF000D15A5 /* Extension + UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F642C12C8CF000D15A5 /* Extension + UIImageView.swift */; };
 		F8643F682C12CEC3000D15A5 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F672C12CEC3000D15A5 /* SearchTextField.swift */; };
+		F8643F902C12E673000D15A5 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F8F2C12E673000D15A5 /* SearchViewModelTests.swift */; };
+		F8643F922C12EE48000D15A5 /* MockSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F912C12EE48000D15A5 /* MockSearchRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		F8643F612C12C85D000D15A5 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		F8643F642C12C8CF000D15A5 /* Extension + UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIImageView.swift"; sourceTree = "<group>"; };
 		F8643F672C12CEC3000D15A5 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
+		F8643F8F2C12E673000D15A5 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
+		F8643F912C12EE48000D15A5 /* MockSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,7 @@
 				F8643F432C11E3ED000D15A5 /* NetworkManagerTests.swift */,
 				F8643F542C11F8E7000D15A5 /* Mock */,
 				F8643F522C11F592000D15A5 /* BookNetworkTests.swift */,
+				F8643F8F2C12E673000D15A5 /* SearchViewModelTests.swift */,
 			);
 			path = MyBooksTests;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 			children = (
 				F8643F562C11F8F9000D15A5 /* MockURLSession.swift */,
 				F8643F582C11F9ED000D15A5 /* MockNetworkManager.swift */,
+				F8643F912C12EE48000D15A5 /* MockSearchRepository.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -340,7 +346,9 @@
 				F8643F572C11F8F9000D15A5 /* MockURLSession.swift in Sources */,
 				F8643F442C11E3ED000D15A5 /* NetworkManagerTests.swift in Sources */,
 				F8643F592C11F9ED000D15A5 /* MockNetworkManager.swift in Sources */,
+				F8643F922C12EE48000D15A5 /* MockSearchRepository.swift in Sources */,
 				F8643F532C11F592000D15A5 /* BookNetworkTests.swift in Sources */,
+				F8643F902C12E673000D15A5 /* SearchViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
