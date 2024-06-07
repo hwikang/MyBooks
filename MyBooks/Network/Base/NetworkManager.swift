@@ -28,7 +28,7 @@ struct NetworkManager: NetworkManagerProtocol {
         guard let url = URL(string: urlString) else {
             return .failure(NetworkError.urlError(urlString))
         }
-    
+        debugPrint("URL - \(url)")
         do {
             var request = URLRequest(url: url)
             request.httpMethod = httpMethod.rawValue

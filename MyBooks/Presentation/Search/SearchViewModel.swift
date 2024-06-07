@@ -20,7 +20,7 @@ final class SearchViewModel: SearchViewModelProtocol {
     private var page = 1
     struct Input {
         let searchText: AnyPublisher<String,Never>
-//        let loadMore: AnyPublisher<Void,Never>
+        let loadMore: AnyPublisher<Void,Never>
     }
     struct Output {
         let bookList: AnyPublisher<[Book],Never>
@@ -42,13 +42,23 @@ final class SearchViewModel: SearchViewModelProtocol {
             }
             .sink { [weak self] text in
                 guard let self = self else { return }
+                page = 1
+                bookList.send([])
                 search(query: text, page: page)
-            }
-            .store(in: &cancellables)
+            }.store(in: &cancellables)
         
-       
+        input.loadMore
+            .combineLatest(input.searchText)
+            .map { $1 }
+            .sink { [weak self] text in
+                guard let self = self else { return }
+                page += 1
+                search(query: text, page: page)
+            }.store(in: &cancellables)
+            
         return Output(bookList: bookList.eraseToAnyPublisher(), errorMessage: errorMessage.eraseToAnyPublisher())
     }
+    
     private func search(query: String, page: Int) {
         
         Task { [weak self] in
@@ -56,7 +66,7 @@ final class SearchViewModel: SearchViewModelProtocol {
             let searchResult = await repository.searchBooks(query: query, page: page)
             switch searchResult {
             case .success(let searchList):
-                bookList.send(searchList.books)
+                bookList.send(bookList.value + searchList.books)
             case .failure(let error):
                 errorMessage.send(error.description)
             }

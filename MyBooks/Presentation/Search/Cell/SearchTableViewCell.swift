@@ -31,6 +31,7 @@ class SearchTableViewCell : UITableViewCell {
         return imageView
     }()
     
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUI()
@@ -47,6 +48,7 @@ class SearchTableViewCell : UITableViewCell {
         super.prepareForReuse()
         bookImage.image = UIImage(named: "placeholder")
     }
+    
     private func setUI() {
         [titleLabel,subTitleLabel,priceLabel,bookImage].forEach {
             contentView.addSubview($0)

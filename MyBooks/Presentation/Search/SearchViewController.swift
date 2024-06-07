@@ -12,15 +12,15 @@ class SearchViewController: UIViewController {
     private let viewModel: SearchViewModelProtocol
     private var cancellables = Set<AnyCancellable>()
     private let books = CurrentValueSubject<[Book], Never>([])
-    
+    private let loadMoreSubject = PassthroughSubject<Void, Never>()
+
     private let textField = SearchTextField()
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.prefetchDataSource = self
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 120 // 또는 다른 적당한 추정치
+        tableView.backgroundColor = .clear
         tableView.register(SearchTableViewCell.self, forCellReuseIdentifier: SearchTableViewCell.identifier)
         return tableView
     }()
@@ -46,7 +46,7 @@ class SearchViewController: UIViewController {
         setConstraint()
     }
     private func bindViewModel() {
-        let input = SearchViewModel.Input(searchText: textField.textPublisher)
+        let input = SearchViewModel.Input(searchText: textField.textPublisher, loadMore: loadMoreSubject.eraseToAnyPublisher())
         let output = viewModel.transform(input: input)
         output.bookList
             .receive(on: DispatchQueue.main)
@@ -92,13 +92,17 @@ class SearchViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
 extension SearchViewController: UITableViewDataSourcePrefetching, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return books.value.count
     }
     
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        
+        if let itemIndex = indexPaths.last?.item, itemIndex >= books.value.count - 1 {
+            loadMoreSubject.send(())
+        }
+
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
