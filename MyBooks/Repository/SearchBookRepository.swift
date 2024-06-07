@@ -13,7 +13,7 @@ protocol SearchBookRepositoryProtocol {
 
 }
 
-class SearchBookRepository: SearchBookRepositoryProtocol {
+struct SearchBookRepository: SearchBookRepositoryProtocol {
     private let network: BookNetworkProtocol
 
     init(network: BookNetworkProtocol) {

@@ -9,10 +9,8 @@
 /* Begin PBXBuildFile section */
 		F8643F1C2C11DE84000D15A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F1B2C11DE84000D15A5 /* AppDelegate.swift */; };
 		F8643F1E2C11DE84000D15A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F1D2C11DE84000D15A5 /* SceneDelegate.swift */; };
-		F8643F202C11DE84000D15A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F1F2C11DE84000D15A5 /* ViewController.swift */; };
-		F8643F232C11DE84000D15A5 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F8643F222C11DE84000D15A5 /* Base */; };
+		F8643F202C11DE84000D15A5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F1F2C11DE84000D15A5 /* SearchViewController.swift */; };
 		F8643F252C11DE84000D15A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8643F242C11DE84000D15A5 /* Assets.xcassets */; };
-		F8643F282C11DE84000D15A5 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F8643F272C11DE84000D15A5 /* Base */; };
 		F8643F312C11DFE3000D15A5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F302C11DFE3000D15A5 /* NetworkManager.swift */; };
 		F8643F332C11E343000D15A5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F322C11E343000D15A5 /* NetworkError.swift */; };
 		F8643F442C11E3ED000D15A5 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F432C11E3ED000D15A5 /* NetworkManagerTests.swift */; };
@@ -24,6 +22,11 @@
 		F8643F532C11F592000D15A5 /* BookNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F522C11F592000D15A5 /* BookNetworkTests.swift */; };
 		F8643F572C11F8F9000D15A5 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F562C11F8F9000D15A5 /* MockURLSession.swift */; };
 		F8643F592C11F9ED000D15A5 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F582C11F9ED000D15A5 /* MockNetworkManager.swift */; };
+		F8643F5D2C12B9FC000D15A5 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F5C2C12B9FC000D15A5 /* SearchViewModel.swift */; };
+		F8643F602C12C4C2000D15A5 /* Extension + UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F5F2C12C4C2000D15A5 /* Extension + UITextField.swift */; };
+		F8643F622C12C85D000D15A5 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F612C12C85D000D15A5 /* SearchTableViewCell.swift */; };
+		F8643F652C12C8CF000D15A5 /* Extension + UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F642C12C8CF000D15A5 /* Extension + UIImageView.swift */; };
+		F8643F682C12CEC3000D15A5 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F672C12CEC3000D15A5 /* SearchTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +43,8 @@
 		F8643F182C11DE84000D15A5 /* MyBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8643F1B2C11DE84000D15A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8643F1D2C11DE84000D15A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F8643F1F2C11DE84000D15A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F8643F222C11DE84000D15A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F8643F1F2C11DE84000D15A5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F8643F242C11DE84000D15A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F8643F272C11DE84000D15A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8643F292C11DE84000D15A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8643F302C11DFE3000D15A5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F8643F322C11E343000D15A5 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -57,6 +58,11 @@
 		F8643F522C11F592000D15A5 /* BookNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookNetworkTests.swift; sourceTree = "<group>"; };
 		F8643F562C11F8F9000D15A5 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		F8643F582C11F9ED000D15A5 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
+		F8643F5C2C12B9FC000D15A5 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		F8643F5F2C12C4C2000D15A5 /* Extension + UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UITextField.swift"; sourceTree = "<group>"; };
+		F8643F612C12C85D000D15A5 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		F8643F642C12C8CF000D15A5 /* Extension + UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIImageView.swift"; sourceTree = "<group>"; };
+		F8643F672C12CEC3000D15A5 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,13 +106,12 @@
 			children = (
 				F8643F1B2C11DE84000D15A5 /* AppDelegate.swift */,
 				F8643F1D2C11DE84000D15A5 /* SceneDelegate.swift */,
-				F8643F1F2C11DE84000D15A5 /* ViewController.swift */,
+				F8643F5E2C12C4AE000D15A5 /* Extension */,
+				F8643F5A2C12B9CE000D15A5 /* Presentation */,
 				F8643F4C2C11EF21000D15A5 /* Repository */,
 				F8643F452C11EA40000D15A5 /* Entity */,
 				F8643F2F2C11DF67000D15A5 /* Network */,
-				F8643F212C11DE84000D15A5 /* Main.storyboard */,
 				F8643F242C11DE84000D15A5 /* Assets.xcassets */,
-				F8643F262C11DE84000D15A5 /* LaunchScreen.storyboard */,
 				F8643F292C11DE84000D15A5 /* Info.plist */,
 			);
 			path = MyBooks;
@@ -165,6 +170,50 @@
 				F8643F582C11F9ED000D15A5 /* MockNetworkManager.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		F8643F5A2C12B9CE000D15A5 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F8643F5B2C12B9E5000D15A5 /* Search */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		F8643F5B2C12B9E5000D15A5 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F8643F662C12CEB7000D15A5 /* Component */,
+				F8643F632C12C860000D15A5 /* Cell */,
+				F8643F1F2C11DE84000D15A5 /* SearchViewController.swift */,
+				F8643F5C2C12B9FC000D15A5 /* SearchViewModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		F8643F5E2C12C4AE000D15A5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F8643F5F2C12C4C2000D15A5 /* Extension + UITextField.swift */,
+				F8643F642C12C8CF000D15A5 /* Extension + UIImageView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F8643F632C12C860000D15A5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F8643F612C12C85D000D15A5 /* SearchTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F8643F662C12CEB7000D15A5 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F8643F672C12CEC3000D15A5 /* SearchTextField.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,8 +298,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8643F252C11DE84000D15A5 /* Assets.xcassets in Resources */,
-				F8643F282C11DE84000D15A5 /* Base in Resources */,
-				F8643F232C11DE84000D15A5 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,15 +315,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8643F5D2C12B9FC000D15A5 /* SearchViewModel.swift in Sources */,
 				F8643F312C11DFE3000D15A5 /* NetworkManager.swift in Sources */,
 				F8643F512C11EF83000D15A5 /* BookNetwork.swift in Sources */,
 				F8643F4E2C11EF38000D15A5 /* SearchBookRepository.swift in Sources */,
-				F8643F202C11DE84000D15A5 /* ViewController.swift in Sources */,
+				F8643F202C11DE84000D15A5 /* SearchViewController.swift in Sources */,
+				F8643F682C12CEC3000D15A5 /* SearchTextField.swift in Sources */,
 				F8643F472C11EA4E000D15A5 /* Book.swift in Sources */,
 				F8643F1C2C11DE84000D15A5 /* AppDelegate.swift in Sources */,
+				F8643F602C12C4C2000D15A5 /* Extension + UITextField.swift in Sources */,
+				F8643F622C12C85D000D15A5 /* SearchTableViewCell.swift in Sources */,
 				F8643F4B2C11ED66000D15A5 /* URLSessionProtocol.swift in Sources */,
 				F8643F492C11EAB4000D15A5 /* BookList.swift in Sources */,
 				F8643F1E2C11DE84000D15A5 /* SceneDelegate.swift in Sources */,
+				F8643F652C12C8CF000D15A5 /* Extension + UIImageView.swift in Sources */,
 				F8643F332C11E343000D15A5 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,25 +353,6 @@
 			targetProxy = F8643F3E2C11E3E2000D15A5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		F8643F212C11DE84000D15A5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F8643F222C11DE84000D15A5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		F8643F262C11DE84000D15A5 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F8643F272C11DE84000D15A5 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F8643F2A2C11DE84000D15A5 /* Debug */ = {
@@ -453,7 +486,7 @@
 				INFOPLIST_FILE = MyBooks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -481,7 +514,7 @@
 				INFOPLIST_FILE = MyBooks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

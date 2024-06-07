@@ -16,7 +16,7 @@ protocol NetworkManagerProtocol {
     func fetchData<T: Decodable>(urlString: String, httpMethod: HTTPMethod, headers: [String: String]?) async -> Result<T,NetworkError>
 }
 
-public class NetworkManager {
+struct NetworkManager: NetworkManagerProtocol {
     private let session: URLSessionProtocol
     init(session: URLSessionProtocol) {
         self.session = session
@@ -28,6 +28,7 @@ public class NetworkManager {
         guard let url = URL(string: urlString) else {
             return .failure(NetworkError.urlError(urlString))
         }
+    
         do {
             var request = URLRequest(url: url)
             request.httpMethod = httpMethod.rawValue
@@ -39,6 +40,7 @@ public class NetworkManager {
                     let decodedData = try JSONDecoder().decode(T.self, from: data)
                     return .success(decodedData)
                 } catch let error {
+                    debugPrint(error)
                     return .failure(NetworkError.failToDecode(error.localizedDescription))
                 }
             } else {

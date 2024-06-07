@@ -13,7 +13,7 @@ protocol BookNetworkProtocol {
 
 }
 
-final class BookNetwork: BookNetworkProtocol {
+struct BookNetwork: BookNetworkProtocol {
     private let network: NetworkManagerProtocol
     private let endPoint = "https://api.itbook.store/1.0"
     

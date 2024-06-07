@@ -28,20 +28,12 @@ final class BookNetworkTests: XCTestCase {
               "total": "1",
               "books": [
                   {
-                      "title": "Test Book",
-                      "subtitle": "A test book",
-                      "isbn13": "1234567890123",
-                      "price": "$0",
-                      "image": "http://example.com/image.jpg",
-                      "url": "http://example.com",
-                      "authors": "John Doe",
-                      "publisher": "Test Publisher",
-                      "language": "English",
-                      "isbn10": "1234567890",
-                      "pages": "100",
-                      "year": "2020",
-                      "rating": "5",
-                      "desc": "Description"
+                     "title": "MongoDB in Action, 2nd Edition",
+                     "subtitle": "Covers MongoDB version 3.0",
+                     "isbn13": "9781617291609",
+                     "price": "$19.99",
+                     "image": "https://itbook.store/img/books/9781617291609.png",
+                     "url": "https://itbook.store/books/9781617291609"
                   }
               ]
           }
@@ -49,12 +41,12 @@ final class BookNetworkTests: XCTestCase {
         mockURLSession.mockData = jsonData
         mockURLSession.mockResponse = HTTPURLResponse(url: URL(string: "https://api.itbook.store/1.0/search/swift/1")!, statusCode: 200, httpVersion: nil, headerFields: nil)
         
-        let result = await bookNetwork.searchBooks(query: "swift", page: 1)
+        let result = await bookNetwork.searchBooks(query: "mongodb", page: 1)
         
         switch result {
         case .success(let bookList):
             XCTAssertEqual(bookList.books.count, 1)
-            XCTAssertEqual(bookList.books.first?.title, "Test Book")
+            XCTAssertEqual(bookList.books.first?.title, "MongoDB in Action, 2nd Edition")
         case .failure(let error):
             XCTFail("Search Book Fail \(error)")
         }
