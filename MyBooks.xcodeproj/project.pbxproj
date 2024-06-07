@@ -32,6 +32,8 @@
 		F8643F942C12F038000D15A5 /* SearchViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F932C12F038000D15A5 /* SearchViewCoordinator.swift */; };
 		F8643F972C12F1AF000D15A5 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F962C12F1AF000D15A5 /* BookViewController.swift */; };
 		F8643F992C12F1B6000D15A5 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F982C12F1B6000D15A5 /* BookViewModel.swift */; };
+		F8643F9B2C12F7E6000D15A5 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F9A2C12F7E6000D15A5 /* BookView.swift */; };
+		F8643F9E2C12F9E1000D15A5 /* LinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F9D2C12F9E1000D15A5 /* LinkButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		F8643F932C12F038000D15A5 /* SearchViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCoordinator.swift; sourceTree = "<group>"; };
 		F8643F962C12F1AF000D15A5 /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		F8643F982C12F1B6000D15A5 /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
+		F8643F9A2C12F7E6000D15A5 /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
+		F8643F9D2C12F9E1000D15A5 /* LinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,10 +237,20 @@
 		F8643F952C12F1A3000D15A5 /* Book */ = {
 			isa = PBXGroup;
 			children = (
+				F8643F9C2C12F9D7000D15A5 /* Component */,
 				F8643F962C12F1AF000D15A5 /* BookViewController.swift */,
+				F8643F9A2C12F7E6000D15A5 /* BookView.swift */,
 				F8643F982C12F1B6000D15A5 /* BookViewModel.swift */,
 			);
 			path = Book;
+			sourceTree = "<group>";
+		};
+		F8643F9C2C12F9D7000D15A5 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F8643F9D2C12F9E1000D15A5 /* LinkButton.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8643F5D2C12B9FC000D15A5 /* SearchViewModel.swift in Sources */,
+				F8643F9B2C12F7E6000D15A5 /* BookView.swift in Sources */,
 				F8643F312C11DFE3000D15A5 /* NetworkManager.swift in Sources */,
 				F8643F512C11EF83000D15A5 /* BookNetwork.swift in Sources */,
 				F8643F4E2C11EF38000D15A5 /* SearchBookRepository.swift in Sources */,
@@ -354,6 +369,7 @@
 				F8643F942C12F038000D15A5 /* SearchViewCoordinator.swift in Sources */,
 				F8643F492C11EAB4000D15A5 /* BookList.swift in Sources */,
 				F8643F1E2C11DE84000D15A5 /* SceneDelegate.swift in Sources */,
+				F8643F9E2C12F9E1000D15A5 /* LinkButton.swift in Sources */,
 				F8643F652C12C8CF000D15A5 /* Extension + UIImageView.swift in Sources */,
 				F8643F332C11E343000D15A5 /* NetworkError.swift in Sources */,
 			);

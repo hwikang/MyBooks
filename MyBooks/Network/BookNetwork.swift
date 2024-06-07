@@ -26,6 +26,6 @@ struct BookNetwork: BookNetworkProtocol {
     }
     
     func bookDetail(isbn: String) async -> Result<Book, NetworkError> {
-        await network.fetchData(urlString: "\(endPoint)/\(isbn)", httpMethod: .get, headers: nil)
+        await network.fetchData(urlString: "\(endPoint)/books/\(isbn)", httpMethod: .get, headers: nil)
     }
 }

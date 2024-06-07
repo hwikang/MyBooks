@@ -10,8 +10,9 @@ import Combine
 
 final class BookViewController: UIViewController {
     private var cancellables = Set<AnyCancellable>()
-       private let trigger = PassthroughSubject<Void,Never>()
-       private let viewModel: BookViewModelProtocol
+    private let trigger = PassthroughSubject<Void,Never>()
+    private let viewModel: BookViewModelProtocol
+    private let bookView = BookView()
     
     init(viewModel: BookViewModelProtocol) {
         self.viewModel = viewModel
@@ -22,6 +23,24 @@ final class BookViewController: UIViewController {
         trigger.send()
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUI()
+        bindViewModel()
+        trigger.send(())
+    }
+    private func setUI() {
+        view.backgroundColor = .white
+        view.addSubview(bookView)
+        bookView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            bookView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            bookView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            bookView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            bookView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            
+        ])
+    }
     private func bindViewModel() {
         let input = BookViewModel.Input(trigger: trigger.eraseToAnyPublisher())
         let output = viewModel.transform(input: input)
@@ -30,6 +49,7 @@ final class BookViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink {[weak self] book in
                 guard let self = self else { return }
+                bookView.setContent(book: book)
                 
             }
             .store(in: &cancellables)

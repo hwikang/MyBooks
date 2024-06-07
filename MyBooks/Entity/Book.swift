@@ -32,6 +32,6 @@ struct Book: Decodable {
     let year: String
     let rating: String
     let desc: String
-    let pdf: [String:String]
+    let pdf: [String:String]?
     
 }

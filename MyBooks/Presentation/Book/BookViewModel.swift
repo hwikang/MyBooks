@@ -14,6 +14,7 @@ protocol BookViewModelProtocol {
 
 final class BookViewModel: BookViewModelProtocol {
     private let repository: BookRepositoryProtocol
+    private let isbn: String
     private var cancellables = Set<AnyCancellable>()
     private let book = PassthroughSubject<Book,Never>()
     private let errorMessage = PassthroughSubject<String,Never>()
@@ -29,12 +30,17 @@ final class BookViewModel: BookViewModelProtocol {
     
     init(repository: BookRepositoryProtocol, isbn: String) {
         self.repository = repository
+        self.isbn = isbn
     }
     func transform(input: BookViewModel.Input) -> BookViewModel.Output {
+        input.trigger.sink { [weak self] in
+            self?.searchBook()
+        }.store(in: &cancellables)
+        
         return Output(book: book.eraseToAnyPublisher(), errorMessage: errorMessage.eraseToAnyPublisher())
     }
  
-    private func searchBook(isbn: String) {
+    private func searchBook() {
         Task { [weak self] in
             guard let self = self else { return }
             let searchResult = await repository.bookDetail(isbn: isbn)
