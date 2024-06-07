@@ -11,12 +11,12 @@ import Combine
 
 final class SearchViewModelTests: XCTestCase {
     private var viewModel: SearchViewModel!
-    private var mockRepository: MockSearchBookRepository!
+    private var mockRepository: MockBookRepository!
     private var cancellables: Set<AnyCancellable>!
     
     override func setUp() {
         super.setUp()
-        mockRepository = MockSearchBookRepository()
+        mockRepository = MockBookRepository()
         viewModel = SearchViewModel(repository: mockRepository)
         cancellables = []
     }

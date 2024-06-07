@@ -29,6 +29,9 @@
 		F8643F682C12CEC3000D15A5 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F672C12CEC3000D15A5 /* SearchTextField.swift */; };
 		F8643F902C12E673000D15A5 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F8F2C12E673000D15A5 /* SearchViewModelTests.swift */; };
 		F8643F922C12EE48000D15A5 /* MockSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F912C12EE48000D15A5 /* MockSearchRepository.swift */; };
+		F8643F942C12F038000D15A5 /* SearchViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F932C12F038000D15A5 /* SearchViewCoordinator.swift */; };
+		F8643F972C12F1AF000D15A5 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F962C12F1AF000D15A5 /* BookViewController.swift */; };
+		F8643F992C12F1B6000D15A5 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F982C12F1B6000D15A5 /* BookViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		F8643F672C12CEC3000D15A5 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		F8643F8F2C12E673000D15A5 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
 		F8643F912C12EE48000D15A5 /* MockSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchRepository.swift; sourceTree = "<group>"; };
+		F8643F932C12F038000D15A5 /* SearchViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCoordinator.swift; sourceTree = "<group>"; };
+		F8643F962C12F1AF000D15A5 /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
+		F8643F982C12F1B6000D15A5 /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +187,7 @@
 		F8643F5A2C12B9CE000D15A5 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F8643F952C12F1A3000D15A5 /* Book */,
 				F8643F5B2C12B9E5000D15A5 /* Search */,
 			);
 			path = Presentation;
@@ -193,6 +200,7 @@
 				F8643F632C12C860000D15A5 /* Cell */,
 				F8643F1F2C11DE84000D15A5 /* SearchViewController.swift */,
 				F8643F5C2C12B9FC000D15A5 /* SearchViewModel.swift */,
+				F8643F932C12F038000D15A5 /* SearchViewCoordinator.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -220,6 +228,15 @@
 				F8643F672C12CEC3000D15A5 /* SearchTextField.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		F8643F952C12F1A3000D15A5 /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				F8643F962C12F1AF000D15A5 /* BookViewController.swift */,
+				F8643F982C12F1B6000D15A5 /* BookViewModel.swift */,
+			);
+			path = Book;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +342,8 @@
 				F8643F312C11DFE3000D15A5 /* NetworkManager.swift in Sources */,
 				F8643F512C11EF83000D15A5 /* BookNetwork.swift in Sources */,
 				F8643F4E2C11EF38000D15A5 /* SearchBookRepository.swift in Sources */,
+				F8643F972C12F1AF000D15A5 /* BookViewController.swift in Sources */,
+				F8643F992C12F1B6000D15A5 /* BookViewModel.swift in Sources */,
 				F8643F202C11DE84000D15A5 /* SearchViewController.swift in Sources */,
 				F8643F682C12CEC3000D15A5 /* SearchTextField.swift in Sources */,
 				F8643F472C11EA4E000D15A5 /* Book.swift in Sources */,
@@ -332,6 +351,7 @@
 				F8643F602C12C4C2000D15A5 /* Extension + UITextField.swift in Sources */,
 				F8643F622C12C85D000D15A5 /* SearchTableViewCell.swift in Sources */,
 				F8643F4B2C11ED66000D15A5 /* URLSessionProtocol.swift in Sources */,
+				F8643F942C12F038000D15A5 /* SearchViewCoordinator.swift in Sources */,
 				F8643F492C11EAB4000D15A5 /* BookList.swift in Sources */,
 				F8643F1E2C11DE84000D15A5 /* SceneDelegate.swift in Sources */,
 				F8643F652C12C8CF000D15A5 /* Extension + UIImageView.swift in Sources */,

@@ -14,15 +14,7 @@ struct BookListItem: Decodable {
     let price: String
     let image: String
     let url: String
-    
-    init(title: String, subtitle: String, isbn13: String, price: String, image: String, url: String) {
-        self.title = title
-        self.subtitle = subtitle
-        self.isbn13 = isbn13
-        self.price = price
-        self.image = image
-        self.url = url
-    }
+
 }
 
 struct Book: Decodable {

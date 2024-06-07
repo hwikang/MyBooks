@@ -1,5 +1,5 @@
 //
-//  SearchBookRepository.swift
+//  BookRepository.swift
 //  MyBooks
 //
 //  Created by paytalab on 6/6/24.
@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol SearchBookRepositoryProtocol {
+protocol BookRepositoryProtocol {
     func searchBooks(query: String, page: Int) async -> Result<BookList, NetworkError>
     func bookDetail(isbn: String) async -> Result<Book, NetworkError>
 
 }
 
-struct SearchBookRepository: SearchBookRepositoryProtocol {
+struct BookRepository: BookRepositoryProtocol {
     private let network: BookNetworkProtocol
 
     init(network: BookNetworkProtocol) {

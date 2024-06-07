@@ -10,6 +10,7 @@ import Combine
 
 class SearchViewController: UIViewController {
     private let viewModel: SearchViewModelProtocol
+    private let coordinator: SearchViewCoordinator
     private var cancellables = Set<AnyCancellable>()
     private let books = CurrentValueSubject<[BookListItem], Never>([])
     private let loadMoreSubject = PassthroughSubject<Void, Never>()
@@ -26,8 +27,9 @@ class SearchViewController: UIViewController {
         return tableView
     }()
     
-    init(viewModel: SearchViewModelProtocol) {
+    init(viewModel: SearchViewModelProtocol, coordinator: SearchViewCoordinator) {
         self.viewModel = viewModel
+        self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -103,7 +105,6 @@ extension SearchViewController: UITableViewDataSourcePrefetching, UITableViewDel
         if let itemIndex = indexPaths.last?.item, itemIndex >= books.value.count - 1 {
             loadMoreSubject.send(())
         }
-
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -118,4 +119,8 @@ extension SearchViewController: UITableViewDataSourcePrefetching, UITableViewDel
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let book = books.value[indexPath.row]
+        coordinator.pushBookViewController(isbn: book.isbn13)
+    }
 }

@@ -13,7 +13,7 @@ protocol SearchViewModelProtocol {
 }
 
 final class SearchViewModel: SearchViewModelProtocol {
-    private let repository: SearchBookRepositoryProtocol
+    private let repository: BookRepositoryProtocol
     private var cancellables = Set<AnyCancellable>()
     private let bookList = CurrentValueSubject<[BookListItem],Never>([])
     private let errorMessage = PassthroughSubject<String,Never>()
@@ -27,7 +27,7 @@ final class SearchViewModel: SearchViewModelProtocol {
         let errorMessage: AnyPublisher<String,Never>
     }
     
-    init(repository: SearchBookRepositoryProtocol){
+    init(repository: BookRepositoryProtocol){
         self.repository = repository
     }
     
