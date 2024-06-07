@@ -23,14 +23,24 @@ class SearchTableViewCell : UITableViewCell {
         return label
     }()
     let priceLabel = UILabel()
-    
+   
     let bookImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "placeholder")
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
+    let isbnLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 10, weight: .light)
+        return label
+    }()
     
+    let urlLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 10, weight: .light)
+        return label
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -42,6 +52,8 @@ class SearchTableViewCell : UITableViewCell {
         subTitleLabel.text = book.subtitle
         priceLabel.text = book.price
         bookImage.setImage(urlString: book.image)
+        isbnLabel.text = book.isbn13
+        urlLabel.text = book.url
     }
     
     override func prepareForReuse() {
@@ -50,7 +62,7 @@ class SearchTableViewCell : UITableViewCell {
     }
     
     private func setUI() {
-        [titleLabel,subTitleLabel,priceLabel,bookImage].forEach {
+        [titleLabel, subTitleLabel, priceLabel, bookImage, isbnLabel, urlLabel].forEach {
             contentView.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -60,19 +72,23 @@ class SearchTableViewCell : UITableViewCell {
             bookImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             bookImage.widthAnchor.constraint(equalToConstant: 100),
             bookImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-
+            
             titleLabel.topAnchor.constraint(equalTo: bookImage.topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: bookImage.trailingAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-
+            
             subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
             subTitleLabel.leadingAnchor.constraint(equalTo: bookImage.trailingAnchor),
             subTitleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             
             priceLabel.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor),
-            priceLabel.leadingAnchor.constraint(equalTo: bookImage.trailingAnchor)
+            priceLabel.leadingAnchor.constraint(equalTo: bookImage.trailingAnchor),
+            isbnLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            isbnLabel.leadingAnchor.constraint(equalTo: bookImage.trailingAnchor),
+            
+            urlLabel.bottomAnchor.constraint(equalTo: isbnLabel.topAnchor),
+            urlLabel.leadingAnchor.constraint(equalTo: bookImage.trailingAnchor),
         ])
-
     }
       
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
