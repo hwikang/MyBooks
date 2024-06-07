@@ -15,16 +15,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = scene as? UIWindowScene else { return }
         window = UIWindow(windowScene: windowScene)
-        let config = URLSessionConfiguration.default
-        config.requestCachePolicy = .returnCacheDataElseLoad
-        let session = URLSession(configuration: config)
+        
+        let session = BookURLSession()
         let network = BookNetwork(network: NetworkManager(session: session))
-        let repository = SearchBookRepository(network: network)
+        let repository = BookRepository(network: network)
         let viewModel = SearchViewModel(repository: repository)
-        let viewController = SearchViewController(viewModel: viewModel)
-
-        let rootVC = UINavigationController(rootViewController: viewController)
-//        window?.backgroundColor = .white
+        let rootVC = UINavigationController()
+        let coordinator = SearchViewCoordinator(nav: rootVC)
+        let viewController = SearchViewController(viewModel: viewModel, coordinator: coordinator)
+        rootVC.viewControllers = [viewController]
         window?.rootViewController = rootVC
 
         window?.makeKeyAndVisible()
