@@ -37,7 +37,7 @@ class SearchTableViewCell : UITableViewCell {
         setUI()
     }
     
-    func configure(book: Book) {
+    func configure(book: BookListItem) {
         titleLabel.text = book.title
         subTitleLabel.text = book.subtitle
         priceLabel.text = book.price

@@ -10,10 +10,15 @@ import Foundation
 struct BookList: Decodable {
     var page: Int
     var total: Int
-    let books: [Book]
+    let books: [BookListItem]
     
     enum CodingKeys: CodingKey {
         case page, total, books
+    }
+    init(page: Int, total: Int, books:[BookListItem]) {
+        self.page = page
+        self.total = total
+        self.books = books
     }
     
     init(from decoder: Decoder) throws {
@@ -28,7 +33,7 @@ struct BookList: Decodable {
         }
         page = pageInt
         total = totalInt
-        books = try container.decode([Book].self, forKey: CodingKeys.books)
+        books = try container.decode([BookListItem].self, forKey: CodingKeys.books)
     }
    
 }

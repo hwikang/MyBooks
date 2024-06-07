@@ -15,7 +15,7 @@ protocol SearchViewModelProtocol {
 final class SearchViewModel: SearchViewModelProtocol {
     private let repository: SearchBookRepositoryProtocol
     private var cancellables = Set<AnyCancellable>()
-    private let bookList = CurrentValueSubject<[Book],Never>([])
+    private let bookList = CurrentValueSubject<[BookListItem],Never>([])
     private let errorMessage = PassthroughSubject<String,Never>()
     private var page = 1
     struct Input {
@@ -23,7 +23,7 @@ final class SearchViewModel: SearchViewModelProtocol {
         let loadMore: AnyPublisher<Void,Never>
     }
     struct Output {
-        let bookList: AnyPublisher<[Book],Never>
+        let bookList: AnyPublisher<[BookListItem],Never>
         let errorMessage: AnyPublisher<String,Never>
     }
     

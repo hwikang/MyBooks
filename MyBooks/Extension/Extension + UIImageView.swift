@@ -51,26 +51,20 @@ class ImageCacheManager {
         }
 
     }
-
+    
     func image(forKey key: String) -> UIImage? {
-        if let image = cache.object(forKey: key as NSString) { 
+        if let image = cache.object(forKey: key as NSString) {
             return image
         }
-       
-        if let fileURL = fileURL(for: key){
-            do {
-                let imageData = try Data(contentsOf: fileURL)
-                if let image = UIImage(data: imageData) {
-                    cache.setObject(image, forKey: key as NSString)
-                    return image
-                }
-            } catch {
-                print("Failed to load data: \(error)")
-            }
+        
+        if let fileURL = fileURL(for: key),
+           let imageData = try? Data(contentsOf: fileURL),
+           let image = UIImage(data: imageData) {
+            cache.setObject(image, forKey: key as NSString)
+            return image
         }
-
         return nil
-
+        
     }
     
     private func fileURL(for key: String) -> URL? {

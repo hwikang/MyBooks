@@ -11,7 +11,7 @@ import Combine
 class SearchViewController: UIViewController {
     private let viewModel: SearchViewModelProtocol
     private var cancellables = Set<AnyCancellable>()
-    private let books = CurrentValueSubject<[Book], Never>([])
+    private let books = CurrentValueSubject<[BookListItem], Never>([])
     private let loadMoreSubject = PassthroughSubject<Void, Never>()
 
     private let textField = SearchTextField()
@@ -21,6 +21,7 @@ class SearchViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .clear
+        tableView.keyboardDismissMode = .onDrag
         tableView.register(SearchTableViewCell.self, forCellReuseIdentifier: SearchTableViewCell.identifier)
         return tableView
     }()
