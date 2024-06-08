@@ -41,6 +41,7 @@ final class BookViewController: UIViewController {
             
         ])
     }
+    
     private func bindViewModel() {
         let input = BookViewModel.Input(trigger: trigger.eraseToAnyPublisher())
         let output = viewModel.transform(input: input)

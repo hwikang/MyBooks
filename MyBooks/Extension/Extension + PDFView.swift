@@ -22,7 +22,7 @@ extension PDFView {
                 URLSession.shared.dataTask(with: url) { data, response, error in
                     guard let data = data, let pdfDocument = PDFDocument(data: data) else { return }
                     
-                    PDFCacheManager.shared.setImage(pdfDocument, forKey: urlString)
+                    PDFCacheManager.shared.setDocument(pdfDocument, forKey: urlString)
                     
                     DispatchQueue.main.async {
                         self?.document = pdfDocument
@@ -30,46 +30,5 @@ extension PDFView {
                 }.resume()
             }
         }
-    }
-}
-
-class PDFCacheManager {
-    static let shared = PDFCacheManager()
-    private init() {}
-
-    private let cache = NSCache<NSString, PDFDocument>()
-
-    func setImage(_ document: PDFDocument, forKey key: String) {
-        cache.setObject(document, forKey: key as NSString)
-        
-        if let fileURL = fileURL(for: key), let data = document.dataRepresentation() {
-            do {
-                try data.write(to: fileURL, options: .atomicWrite)
-            } catch {
-                print("Failed to save data: \(error)")
-            }
-        }
-
-    }
-    
-    func document(forKey key: String) -> PDFDocument? {
-        if let document = cache.object(forKey: key as NSString) {
-            return document
-        }
-        
-        if let fileURL = fileURL(for: key),
-           let documentData = try? Data(contentsOf: fileURL),
-           let document = PDFDocument(data: documentData) {
-            cache.setObject(document, forKey: key as NSString)
-            return document
-        }
-        return nil
-        
-    }
-    
-    private func fileURL(for key: String) -> URL? {
-        let fileManager = FileManager.default
-        guard let cacheDirectory = fileManager.urls(for: .cachesDirectory, in: .userDomainMask).first else { return nil }
-        return cacheDirectory.appendingPathComponent(key.replacingOccurrences(of: "/", with: "-"))
     }
 }
