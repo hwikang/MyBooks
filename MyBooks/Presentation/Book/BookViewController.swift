@@ -27,9 +27,10 @@ final class BookViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         bindViewModel()
-        trigger.send(())
     }
+    
     private func setUI() {
+        view.backgroundColor = .systemBackground
         view.addSubview(bookView)
         bookView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -49,7 +50,9 @@ final class BookViewController: UIViewController {
             .sink {[weak self] book in
                 guard let self = self else { return }
                 bookView.setContent(book: book)
-                
+                if let pdf = book.pdf {
+                    bookView.setPDF(pdf: pdf)
+                }
             }
             .store(in: &cancellables)
         

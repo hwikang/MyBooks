@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F80D4E602C140B7F00AA6B25 /* Extension + PDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D4E5F2C140B7F00AA6B25 /* Extension + PDFView.swift */; };
+		F80D4E632C140C0E00AA6B25 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D4E622C140C0E00AA6B25 /* CacheManager.swift */; };
 		F8643F1C2C11DE84000D15A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F1B2C11DE84000D15A5 /* AppDelegate.swift */; };
 		F8643F1E2C11DE84000D15A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F1D2C11DE84000D15A5 /* SceneDelegate.swift */; };
 		F8643F202C11DE84000D15A5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8643F1F2C11DE84000D15A5 /* SearchViewController.swift */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F80D4E5F2C140B7F00AA6B25 /* Extension + PDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + PDFView.swift"; sourceTree = "<group>"; };
+		F80D4E622C140C0E00AA6B25 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		F8643F182C11DE84000D15A5 /* MyBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8643F1B2C11DE84000D15A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8643F1D2C11DE84000D15A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +101,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F80D4E612C140C0400AA6B25 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				F80D4E622C140C0E00AA6B25 /* CacheManager.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		F8643F0F2C11DE83000D15A5 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +132,7 @@
 			children = (
 				F8643F1B2C11DE84000D15A5 /* AppDelegate.swift */,
 				F8643F1D2C11DE84000D15A5 /* SceneDelegate.swift */,
+				F80D4E612C140C0400AA6B25 /* Util */,
 				F8643F5E2C12C4AE000D15A5 /* Extension */,
 				F8643F5A2C12B9CE000D15A5 /* Presentation */,
 				F8643F4C2C11EF21000D15A5 /* Repository */,
@@ -214,6 +227,7 @@
 			children = (
 				F8643F5F2C12C4C2000D15A5 /* Extension + UITextField.swift */,
 				F8643F642C12C8CF000D15A5 /* Extension + UIImageView.swift */,
+				F80D4E5F2C140B7F00AA6B25 /* Extension + PDFView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -358,12 +372,14 @@
 				F8643F512C11EF83000D15A5 /* BookNetwork.swift in Sources */,
 				F8643F4E2C11EF38000D15A5 /* SearchBookRepository.swift in Sources */,
 				F8643F972C12F1AF000D15A5 /* BookViewController.swift in Sources */,
+				F80D4E632C140C0E00AA6B25 /* CacheManager.swift in Sources */,
 				F8643F992C12F1B6000D15A5 /* BookViewModel.swift in Sources */,
 				F8643F202C11DE84000D15A5 /* SearchViewController.swift in Sources */,
 				F8643F682C12CEC3000D15A5 /* SearchTextField.swift in Sources */,
 				F8643F472C11EA4E000D15A5 /* Book.swift in Sources */,
 				F8643F1C2C11DE84000D15A5 /* AppDelegate.swift in Sources */,
 				F8643F602C12C4C2000D15A5 /* Extension + UITextField.swift in Sources */,
+				F80D4E602C140B7F00AA6B25 /* Extension + PDFView.swift in Sources */,
 				F8643F622C12C85D000D15A5 /* SearchTableViewCell.swift in Sources */,
 				F8643F4B2C11ED66000D15A5 /* URLSessionProtocol.swift in Sources */,
 				F8643F942C12F038000D15A5 /* SearchViewCoordinator.swift in Sources */,

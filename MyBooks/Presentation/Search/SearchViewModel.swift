@@ -90,7 +90,7 @@ final class SearchViewModel: SearchViewModelProtocol {
     }
     
     private func queryValidation(query: String) -> Bool {
-        let regex = "^[a-zA-Z0-9]*$"
+        let regex = "^[a-zA-Z0-9 ]*$"
         let predicate = NSPredicate(format:"SELF MATCHES %@", regex)
         return predicate.evaluate(with: query)
     }

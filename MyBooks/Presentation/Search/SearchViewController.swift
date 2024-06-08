@@ -40,6 +40,7 @@ class SearchViewController: UIViewController {
     }
     
     private func setUI() {
+        
         [textField, tableView].forEach {
             view.addSubview($0)
             view.addSubview($0)

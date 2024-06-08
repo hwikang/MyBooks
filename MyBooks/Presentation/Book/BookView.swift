@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PDFKit
 
 final class BookView: UIView {
     
@@ -40,7 +41,7 @@ final class BookView: UIView {
         
     }
     
-    func setContent(book: Book) {
+    public func setContent(book: Book) {
         bookImage.setImage(urlString: book.image)
         titleLabel.text = book.title
         subTitleLabel.text = book.subtitle
@@ -53,7 +54,26 @@ final class BookView: UIView {
         isbnLabel.text = "ISBN13: \(book.isbn13) ISBN10: \(book.isbn10)"
         descLabel.text = book.desc
         addLinkButtonToStackView(title: "Go to Store", url: book.url)
-       
+        
+    }
+    
+    public func setPDF(pdf: [[String: String]].Element) {
+        pdf.forEach { addImageViewToStackView(element: $0) }
+    }
+    
+    private func addImageViewToStackView(element: [String: String].Element) {
+        
+        let label = UILabel()
+        label.text = element.key
+        let pdfView = PDFView()
+        pdfView.autoScales = true
+        pdfView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            pdfView.heightAnchor.constraint(equalToConstant: 540),
+        ])
+        pdfView.setDocument(urlString: element.value)
+        stackView.addArrangedSubview(label)
+        stackView.addArrangedSubview(pdfView)
     }
     
     private func addLinkButtonToStackView(title: String, url: String) {
@@ -65,6 +85,9 @@ final class BookView: UIView {
     
     private func setUI() {
         titleLabel.font = .systemFont(ofSize: 30, weight: .bold)
+        titleLabel.numberOfLines = 2
+        subTitleLabel.numberOfLines = 2
+        descLabel.numberOfLines = 0
         addSubview(scrollView)
         scrollView.addSubview(stackView)
         [bookImage, titleLabel, subTitleLabel, publisherLabel, priceLabel,  authorLabel, languageLabel, yearLabel, ratingLabel, descLabel, isbnLabel].forEach {
