@@ -65,7 +65,7 @@ final class BookView: UIView {
     
     private func setUI() {
         titleLabel.font = .systemFont(ofSize: 30, weight: .bold)
-        self.addSubview(scrollView)
+        addSubview(scrollView)
         scrollView.addSubview(stackView)
         [bookImage, titleLabel, subTitleLabel, publisherLabel, priceLabel,  authorLabel, languageLabel, yearLabel, ratingLabel, descLabel, isbnLabel].forEach {
             stackView.addArrangedSubview($0)
@@ -85,10 +85,10 @@ final class BookView: UIView {
             scrollView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
             
             stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
             stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -40),
 
             bookImage.heightAnchor.constraint(equalToConstant: 340),
             

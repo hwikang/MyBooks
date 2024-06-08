@@ -12,7 +12,6 @@ final class SearchTextField: UITextField {
         super.init(frame: frame)
         borderStyle = .roundedRect
         keyboardType = .default
-        backgroundColor = .clear
         layer.borderWidth = 1
         layer.borderColor = UIColor.gray.cgColor
         layer.cornerRadius = 5

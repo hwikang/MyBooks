@@ -30,12 +30,11 @@ final class BookViewController: UIViewController {
         trigger.send(())
     }
     private func setUI() {
-        view.backgroundColor = .white
         view.addSubview(bookView)
         bookView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            bookView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            bookView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            bookView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            bookView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             bookView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             bookView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
             

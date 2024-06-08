@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let viewController = SearchViewController(viewModel: viewModel, coordinator: coordinator)
         rootVC.viewControllers = [viewController]
         window?.rootViewController = rootVC
-
+        window?.backgroundColor = .systemBackground
         window?.makeKeyAndVisible()
 
     }

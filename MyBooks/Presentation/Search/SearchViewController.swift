@@ -21,7 +21,6 @@ class SearchViewController: UIViewController {
         tableView.prefetchDataSource = self
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = .clear
         tableView.keyboardDismissMode = .onDrag
         tableView.register(SearchTableViewCell.self, forCellReuseIdentifier: SearchTableViewCell.identifier)
         return tableView
@@ -121,6 +120,8 @@ extension SearchViewController: UITableViewDataSourcePrefetching, UITableViewDel
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let book = books.value[indexPath.row]
-        coordinator.pushBookViewController(isbn: book.isbn13)
+        DispatchQueue.main.async { [weak self] in
+            self?.coordinator.pushBookViewController(isbn: book.isbn13)
+        }
     }
 }

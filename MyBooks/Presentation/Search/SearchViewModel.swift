@@ -17,6 +17,8 @@ final class SearchViewModel: SearchViewModelProtocol {
     private var cancellables = Set<AnyCancellable>()
     private let bookList = CurrentValueSubject<[BookListItem],Never>([])
     private let errorMessage = PassthroughSubject<String,Never>()
+    private let latestQuery = CurrentValueSubject<String,Never>("")
+
     private var page = 1
     struct Input {
         let searchText: AnyPublisher<String,Never>
@@ -44,12 +46,15 @@ final class SearchViewModel: SearchViewModelProtocol {
                 guard let self = self else { return }
                 page = 1
                 bookList.send([])
+                latestQuery.send(text)
                 search(query: text, page: page)
-            }.store(in: &cancellables)
+            }
+            .store(in: &cancellables)
         
         input.loadMore
-            .combineLatest(input.searchText)
-            .map { $1 }
+            .compactMap { [weak self] in
+                return self?.latestQuery.value
+            }
             .sink { [weak self] text in
                 guard let self = self else { return }
                 page += 1
